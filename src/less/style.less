@@ -1,0 +1,168 @@
+@green: #009797;
+@gray: #e5e5e5;
+@lowGray: #f6f6f6;
+body{
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    // border-bottom: 3px solid @gray;
+    .wrapperBtn{
+        width: 100%;   
+    }
+    .wrapperBtn:nth-child(1){
+        margin-right: 10px
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        cursor: pointer;
+        background-color: @green;
+        margin-bottom: 10px;
+    }
+
+    
+}
+li{
+    list-style: none;
+}
+.titleBlock{
+    display: flex;
+    border-bottom: 3px solid @gray;
+    border-top: 3px solid @gray;
+    justify-content: space-between;
+    img{
+        width: 20px;
+        cursor: pointer;
+    }
+    ul{
+        margin-right: 20px;
+    }
+    li{
+        display: inline-block;
+        margin: 5px;
+    }
+}
+.sortBlock{
+    .main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .block{
+            position: relative;
+            width: 32%;
+            margin-top: 10px;
+            background-color: @lowGray;
+    
+            ul{
+                margin:0 10px;
+                padding: 0 0 0 10px;
+                li{
+                    margin-bottom: 20px;
+                }
+            }
+            .serialNumber{
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                color: @green;
+            }
+
+            .title, .discription{
+                
+                margin: 0 20px 20px;
+            }
+            .discription{
+                padding-top: 10px;
+                border-top: 3px solid @gray;
+            }
+
+            h4{
+                padding-bottom: 10px;
+                border-bottom: 3px solid @gray;
+            }
+        }
+        .block:nth-child(3n + 2){
+            margin: 10px 2% 0;
+        }
+    }
+}
+
+.sortList{
+    .main{
+        display: flex;
+        flex-direction: column;
+        
+        .block{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            background-color: @lowGray;
+            
+
+            .serialNumber{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                color: @green;
+            }
+
+            h4{
+                margin: 0 0 10px;
+                width: 20%;
+                text-align: center;
+            }
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+                width: 80%;
+                
+                
+                li{
+                    width: 33.33%;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .discription{
+                border-top: 3px solid @gray;
+                margin: 0 10px;
+                padding: 20px 0;
+            }
+
+            .title{
+                display: flex;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    label{
+        color: @green;
+    }
+
+    .submitBtn{
+        padding: 5px 0;
+        margin-top: 10px;
+        width: 100px;
+        background-color: @green;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+.active{
+    box-shadow: 0 0 4px 4px @green;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test carPrice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../public/less/style.css">
+</head>
+<body class="sortList">
+    <header class="header">
+        <div class="wrapperBtn">
+                <div  class="btn addToTop">Добавить в начало</div>
+                <div class="btn addToBottom">Добавить в конец</div>
+        </div>
+         <div class="wrapperBtn">
+                <div class="btn removeFirst">Удалить первый</div>
+                <div class="btn removeLast"> Удалить последнй</div>
+         </div>
+         
+    </header>
+
+    <div class="titleBlock">
+        <h3>
+             Список объектов
+        </h3>
+
+        <ul>
+            <li class="list active"><img src="../../img/list.jpg"></li>
+            <li class="cart"><img src="../../img/block.jpg"></li>
+        </ul>
+    </div>
+    <div class="main">
+
+    </div>
+    <form class="bottomForm">
+        <h3>Добавить новый объект</h3>
+        <label for="newTitle">Заголовок <sup>*</sup></label>
+         <input type="text" id="newTitle">
+         <label for="addArticle">Добавить пункт</label>
+         <input type="text" id="addArticle">
+         <label for="describe">Описания</label>
+         <input type="text" id="describe">
+         <div class="submitBtn">Добавить</div>
+    </form>
+    <template class="templateObjact">
+        <div  class="block">
+              <div class="serialNumber"></div>
+            <div class="title">
+                <h4 ></h4>
+                <ul></ul>
+            </div>
+            <p class="discription"></p>
+        </div>
+    </template>
+    <script src="../../public/main.js"></script>
+</body>
+</html>
