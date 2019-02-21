@@ -6,14 +6,33 @@ const removeLast = document.querySelector('.removeLast')
 const main = document.querySelector('.main');
 const list = document.querySelector('.list');
 const cart = document.querySelector('.cart');
-const submitBtn = document.querySelector('.submitBtn')
+const submitBtn = document.querySelector('.submitBtn');
 
-const getFile = ()=>{
+// const getFile = (resolve, reject)=>{
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', 'http://localhost:3000/data');
+//     xhr.send();
+//     if(xhr.status !== 200){
+//         resolve(console.error());
+        
+//     } else{
+//         reject(JSON.parse(xhr.response));
+//     }
+    
+// }
+let promise = new Promise((res, rej) => {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:3000/data', false);
     xhr.send();
-    return JSON.parse(xhr.response)
-}
+    if(xhr.status !== 200){
+        rej(console.error());
+        
+    } else{
+        res(JSON.parse(xhr.response));
+    }
+
+})
+
 
 const quantityElem = (elem, tag, clone) => {
     elem.forEach(item=>{
@@ -33,8 +52,7 @@ const render = data => {
         main.appendChild(templateClone)
     });
 }
-
-render(getFile())
+promise.then(render)
 
 const changeNumber = elem => {
     const serialNumber = document.querySelectorAll('.serialNumber');

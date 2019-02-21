@@ -8,14 +8,28 @@ var removeLast = document.querySelector('.removeLast');
 var main = document.querySelector('.main');
 var list = document.querySelector('.list');
 var cart = document.querySelector('.cart');
-var submitBtn = document.querySelector('.submitBtn');
+var submitBtn = document.querySelector('.submitBtn'); // const getFile = (resolve, reject)=>{
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', 'http://localhost:3000/data');
+//     xhr.send();
+//     if(xhr.status !== 200){
+//         resolve(console.error());
+//     } else{
+//         reject(JSON.parse(xhr.response));
+//     }
+// }
 
-var getFile = function getFile() {
+var promise = new Promise(function (res, rej) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://localhost:3000/data', false);
   xhr.send();
-  return JSON.parse(xhr.response);
-};
+
+  if (xhr.status !== 200) {
+    rej(console.error());
+  } else {
+    res(JSON.parse(xhr.response));
+  }
+});
 
 var quantityElem = function quantityElem(elem, tag, clone) {
   elem.forEach(function (item) {
@@ -36,7 +50,7 @@ var render = function render(data) {
   });
 };
 
-render(getFile());
+promise.then(render);
 
 var changeNumber = function changeNumber(elem) {
   var serialNumber = document.querySelectorAll('.serialNumber');
